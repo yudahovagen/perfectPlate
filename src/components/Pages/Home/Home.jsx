@@ -22,7 +22,7 @@ const Home = () => {
   const [foodListByName, setFoodListByName] = useState([]);
 
   const foodIntoDB = async () => {    
-    const req = await fetch("http://localhost:3000/perfectMeal/home", {
+    const req = await fetch("https://git.heroku.com/perfect-meal-plate.git/perfectMeal/home", {
       headers: { "X-Auth-Token": localStorage.getItem("token") },
     });
 
@@ -56,7 +56,7 @@ const Home = () => {
   //
   const updateFood = async (e) => {
     e.preventDefault();
-    const req = await fetch("http://localhost:3000/perfectMeal/home", {
+    const req = await fetch("https://git.heroku.com/perfect-meal-plate.git/perfectMeal/home", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
