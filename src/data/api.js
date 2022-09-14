@@ -1,4 +1,4 @@
-const REQUEST_URL = "https://api.nal.usda.gov/fdc/v1/foods/search";
-const API_KEY = "XHgqjUD3nRJhnlybzY4TxCxq9tEO1Gl97denrpBe";
+const REQUEST_URL = process.env.REQUEST_URL;
+const API_KEY = process.env.API_KEY;
 
 export { REQUEST_URL, API_KEY };

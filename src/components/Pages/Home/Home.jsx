@@ -21,10 +21,13 @@ const Home = () => {
   //contains an array of food items from the search query
   const [foodListByName, setFoodListByName] = useState([]);
 
-  const foodIntoDB = async () => {    
-    const req = await fetch("https://git.heroku.com/perfect-meal-plate.git/perfectMeal/home", {
-      headers: { "X-Auth-Token": localStorage.getItem("token") },
-    });
+  const foodIntoDB = async () => {
+    const req = await fetch(
+      "https://git.heroku.com/perfect-meal-plate.git/perfectMeal/home",
+      {
+        headers: { "X-Auth-Token": localStorage.getItem("token") },
+      }
+    );
 
     const data = await req.json();
     console.log("data from foodIntoDB: ", data);
@@ -51,21 +54,21 @@ const Home = () => {
     }
   }, [navigate]);
 
-  //lets call this method after the handleClick method
-  //we want to update food based on the current food item that we found
-  //
   const updateFood = async (e) => {
     e.preventDefault();
-    const req = await fetch("https://git.heroku.com/perfect-meal-plate.git/perfectMeal/home", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        "x-access-token": localStorage.getItem("token"),
-      },
-      body: JSON.stringify({
-        food: tmpFood,
-      }),
-    });
+    const req = await fetch(
+      "https://git.heroku.com/perfect-meal-plate.git/perfectMeal/home",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          "x-access-token": localStorage.getItem("token"),
+        },
+        body: JSON.stringify({
+          food: tmpFood,
+        }),
+      }
+    );
 
     const data = await req.json();
     if (data.status === "ok") {
