@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     const { email, password } = user;
 
-    const response = await fetch("http://localhost:3000/perfectMeal/login", {
+    const response = await fetch("https://git.heroku.com/perfect-meal-plate.git/perfectMeal/login", {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify({ email, password }),

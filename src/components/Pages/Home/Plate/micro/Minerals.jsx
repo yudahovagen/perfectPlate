@@ -39,7 +39,7 @@ const Minerals = ({ plate }) => {
         .toFixed(3);
     });
     return mineralsAmountCopy;
-  }, [ plate]);
+  }, [plate]);
 
   useEffect(() => {
     setMineralsAmount(getNutrientData());
